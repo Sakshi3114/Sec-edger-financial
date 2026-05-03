@@ -12,7 +12,7 @@ import {
 } from "recharts";
 import { useState } from "react";
 import { useApp } from "../context/AppContext";
-import { FINANCIAL_METRICS } from "../constants";
+import { METRIC_DEFS } from "../constants";
 import { formatValue } from "../utils/api";
 
 function CustomTooltip({ active, payload, label, format, color }) {
@@ -54,7 +54,10 @@ export default function FinancialChart() {
   const { metrics, activeMetric } = useApp();
   const [chartType, setChartType] = useState("area");
 
-  const def = FINANCIAL_METRICS[activeMetric];
+  const def = METRIC_DEFS[activeMetric];
+  console.log("Financial Metric", METRIC_DEFS);
+
+  console.log(def);
   const data = metrics[activeMetric];
 
   if (!def || !data?.series?.length) {

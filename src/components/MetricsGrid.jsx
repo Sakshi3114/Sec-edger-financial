@@ -1,9 +1,9 @@
 import { formatValue, formatGrowth } from "../utils/api";
-import { FINANCIAL_METRICS } from "../constants";
+import { METRIC_DEFS } from "../constants";
 import { useApp } from "../context/AppContext";
 
 function MetricCard({ metricKey, data, isActive, onClick }) {
-  const def = FINANCIAL_METRICS[metricKey];
+  const def = METRIC_DEFS[metricKey];
   if (!def || !data) return null;
 
   const { latest, growth } = data;

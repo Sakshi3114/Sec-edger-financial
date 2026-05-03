@@ -16,7 +16,7 @@ export default function DataTable() {
     );
   }
 
-  const rows = [...data.series].reverse(); // Most recent first
+  const rows = [...data.series].reverse();
 
   return (
     <div className="glass-card overflow-hidden">

@@ -61,7 +61,7 @@ npm i -g vercel
 vercel --prod
 ```
 
-For Vercel/Netlify, add a `vercel.json` or `netlify.toml` with rewrite rules to proxy SEC EDGAR (see notes below).
+For Vercel add a `vercel.json` with rewrite rules to proxy SEC EDGAR (see notes below).
 
 ---
 

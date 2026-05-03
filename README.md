@@ -2,7 +2,7 @@
 
 A clean, responsive financial data explorer that fetches real company data from the [SEC EDGAR API](https://www.sec.gov/developer), displays interactive charts, and lets users explore key financial metrics for any publicly traded US company.
 
-**Live Demo:** [your-deployment-url-here]
+**Live Demo:** https://sec-edger-financial.vercel.app/
 
 ---
 
@@ -20,14 +20,14 @@ A clean, responsive financial data explorer that fetches real company data from 
 
 ## Tech Stack
 
-| Layer | Choice | Why |
-|---|---|---|
-| Framework | React 18 + Vite | Fast HMR, modern bundler |
-| Styling | Tailwind CSS v3 | Utility-first, consistent design system |
-| State | Context API + useReducer | Built-in, no extra deps for this scale |
-| Routing | React Router v6 | SPA multi-page navigation |
-| Charts | Recharts | Composable, works great with React |
-| API | SEC EDGAR (free, no auth) | Official US regulatory data |
+| Layer     | Choice                    | Why                                     |
+| --------- | ------------------------- | --------------------------------------- |
+| Framework | React 18 + Vite           | Fast HMR, modern bundler                |
+| Styling   | Tailwind CSS v3           | Utility-first, consistent design system |
+| State     | Context API + useReducer  | Built-in, no extra deps for this scale  |
+| Routing   | React Router v6           | SPA multi-page navigation               |
+| Charts    | Recharts                  | Composable, works great with React      |
+| API       | SEC EDGAR (free, no auth) | Official US regulatory data             |
 
 ---
 

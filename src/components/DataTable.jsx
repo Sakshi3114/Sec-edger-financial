@@ -1,6 +1,6 @@
-import { useApp } from '../context/AppContext';
-import { FINANCIAL_METRICS } from '../constants';
-import { formatValue, calcGrowth, formatGrowth } from '../utils/api';
+import { useApp } from "../context/AppContext";
+import { FINANCIAL_METRICS } from "../constants";
+import { formatValue, calcGrowth, formatGrowth } from "../utils/api";
 
 export default function DataTable() {
   const { metrics, activeMetric } = useApp();
@@ -25,7 +25,9 @@ export default function DataTable() {
         <span className="text-xl">{def.icon}</span>
         <div>
           <h3 className="font-display font-bold text-white">{def.label}</h3>
-          <p className="text-xs text-ink-200 font-mono">Annual history (10-K filings)</p>
+          <p className="text-xs text-ink-200 font-mono">
+            Annual history (10-K filings)
+          </p>
         </div>
       </div>
 
@@ -51,7 +53,9 @@ export default function DataTable() {
           <tbody className="divide-y divide-white/5">
             {rows.map((row, i) => {
               const nextRow = rows[i + 1]; // previous year
-              const growth = nextRow ? calcGrowth(row.value, nextRow.value) : null;
+              const growth = nextRow
+                ? calcGrowth(row.value, nextRow.value)
+                : null;
               const growthStr = formatGrowth(growth);
               const isPositive = growth !== null && growth >= 0;
               const isLatest = i === 0;
@@ -59,16 +63,22 @@ export default function DataTable() {
               return (
                 <tr
                   key={row.date}
-                  className={`transition-colors group ${isLatest ? 'bg-ledger/5' : 'hover:bg-white/3'}`}
+                  className={`transition-colors group ${
+                    isLatest ? "bg-ledger/5" : "hover:bg-white/3"
+                  }`}
                 >
                   {/* Year */}
                   <td className="px-5 py-3.5">
                     <div className="flex items-center gap-2">
                       {isLatest && (
-                        <span className="w-1.5 h-1.5 rounded-full bg-ledger flex-shrink-0" />
+                        <span className="w-1.5 h-1.5 rounded-full bg-ledger shrink-0" />
                       )}
-                      <span className={`font-mono font-medium ${isLatest ? 'text-ledger' : 'text-white'}`}>
-                        {row.date.split('-')[0]}
+                      <span
+                        className={`font-mono font-medium ${
+                          isLatest ? "text-ledger" : "text-white"
+                        }`}
+                      >
+                        {row.date.split("-")[0]}
                       </span>
                       <span className="text-[10px] text-ink-200/60 font-mono hidden sm:inline">
                         {row.date}
@@ -78,7 +88,11 @@ export default function DataTable() {
 
                   {/* Value */}
                   <td className="px-5 py-3.5 text-right">
-                    <span className={`font-mono font-semibold ${isLatest ? 'text-white' : 'text-ink-100'}`}>
+                    <span
+                      className={`font-mono font-semibold ${
+                        isLatest ? "text-white" : "text-ink-100"
+                      }`}
+                    >
                       {formatValue(row.value, def.format)}
                     </span>
                   </td>
@@ -86,11 +100,13 @@ export default function DataTable() {
                   {/* Growth */}
                   <td className="px-5 py-3.5 text-right">
                     {growthStr ? (
-                      <span className={`font-mono text-xs px-2 py-0.5 rounded ${
-                        isPositive
-                          ? 'text-bull bg-bull/10'
-                          : 'text-bear bg-bear/10'
-                      }`}>
+                      <span
+                        className={`font-mono text-xs px-2 py-0.5 rounded ${
+                          isPositive
+                            ? "text-bull bg-bull/10"
+                            : "text-bear bg-bear/10"
+                        }`}
+                      >
                         {growthStr}
                       </span>
                     ) : (
@@ -115,7 +131,7 @@ export default function DataTable() {
           Source: SEC EDGAR XBRL · All values in USD
         </p>
         <p className="text-[10px] text-ink-200/60 font-mono">
-          {rows.length} year{rows.length !== 1 ? 's' : ''} of data
+          {rows.length} year{rows.length !== 1 ? "s" : ""} of data
         </p>
       </div>
     </div>

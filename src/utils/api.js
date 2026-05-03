@@ -112,8 +112,6 @@ export function extractMetricSeries(facts, tags, preferredUnit = "USD") {
   return [];
 }
 
-// ─── Display formatters ───────────────────────────────────────────────────────
-
 export function formatValue(value, format = "currency") {
   if (value === null || value === undefined) return "—";
   if (format === "decimal") return Number(value).toFixed(2);

@@ -16,11 +16,10 @@ export default function DataTable() {
     );
   }
 
-  const rows = [...data.series].reverse(); // Most recent first
+  const rows = [...data.series].reverse();
 
   return (
     <div className="glass-card overflow-hidden">
-      {/* Header */}
       <div className="px-5 py-4 border-b border-white/5 flex items-center gap-3">
         <span className="text-xl">{def.icon}</span>
         <div>
@@ -31,7 +30,6 @@ export default function DataTable() {
         </div>
       </div>
 
-      {/* Table */}
       <div className="overflow-x-auto">
         <table className="w-full text-sm">
           <thead>
@@ -52,7 +50,7 @@ export default function DataTable() {
           </thead>
           <tbody className="divide-y divide-white/5">
             {rows.map((row, i) => {
-              const nextRow = rows[i + 1]; // previous year
+              const nextRow = rows[i + 1];
               const growth = nextRow
                 ? calcGrowth(row.value, nextRow.value)
                 : null;
@@ -86,7 +84,6 @@ export default function DataTable() {
                     </div>
                   </td>
 
-                  {/* Value */}
                   <td className="px-5 py-3.5 text-right">
                     <span
                       className={`font-mono font-semibold ${
@@ -97,7 +94,6 @@ export default function DataTable() {
                     </span>
                   </td>
 
-                  {/* Growth */}
                   <td className="px-5 py-3.5 text-right">
                     {growthStr ? (
                       <span
@@ -114,7 +110,6 @@ export default function DataTable() {
                     )}
                   </td>
 
-                  {/* Filing Form */}
                   <td className="px-5 py-3.5 text-right hidden sm:table-cell">
                     <span className="tag">{row.form}</span>
                   </td>
@@ -125,7 +120,6 @@ export default function DataTable() {
         </table>
       </div>
 
-      {/* Footer */}
       <div className="px-5 py-3 border-t border-white/5 flex items-center justify-between">
         <p className="text-[10px] text-ink-200/60 font-mono">
           Source: SEC EDGAR XBRL · All values in USD

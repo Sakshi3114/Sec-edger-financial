@@ -1,16 +1,13 @@
-function Skeleton({ className = '' }) {
-  return (
-    <div className={`bg-white/5 rounded animate-pulse ${className}`} />
-  );
+function Skeleton({ className = "" }) {
+  return <div className={`bg-white/5 rounded animate-pulse ${className}`} />;
 }
 
 export function DashboardSkeleton() {
   return (
     <div className="space-y-6">
-      {/* Company header skeleton */}
       <div className="glass-card p-5 sm:p-6">
         <div className="flex items-start gap-4">
-          <Skeleton className="w-14 h-14 rounded-xl flex-shrink-0" />
+          <Skeleton className="w-14 h-14 rounded-xl shrink-0" />
           <div className="flex-1 space-y-2">
             <Skeleton className="h-7 w-48 rounded" />
             <Skeleton className="h-4 w-24 rounded" />
@@ -26,7 +23,6 @@ export function DashboardSkeleton() {
         </div>
       </div>
 
-      {/* Metrics grid skeleton */}
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
         {[...Array(6)].map((_, i) => (
           <div key={i} className="glass-card p-4 space-y-3">
@@ -40,7 +36,6 @@ export function DashboardSkeleton() {
         ))}
       </div>
 
-      {/* Chart skeleton */}
       <div className="glass-card p-5 sm:p-6">
         <div className="flex justify-between mb-6">
           <div className="space-y-2">

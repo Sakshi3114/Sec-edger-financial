@@ -53,7 +53,6 @@ export default function DashboardPage() {
 
   return (
     <div className="max-w-6xl mx-auto px-4 py-6">
-      {/* Top search */}
       <div className="mb-5 max-w-lg">
         <SearchBar onSelect={(c) => loadCompany(c)} />
       </div>

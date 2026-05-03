@@ -1,11 +1,11 @@
 import { useApp } from "../context/AppContext";
-import { FINANCIAL_METRICS } from "../constants";
+import { METRIC_DEFS } from "../constants";
 import { formatValue, calcGrowth, formatGrowth } from "../utils/api";
 
 export default function DataTable() {
   const { metrics, activeMetric } = useApp();
 
-  const def = FINANCIAL_METRICS[activeMetric];
+  const def = METRIC_DEFS[activeMetric];
   const data = metrics[activeMetric];
 
   if (!def || !data?.series?.length) {

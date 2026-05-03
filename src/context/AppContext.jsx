@@ -160,8 +160,9 @@ export function AppProvider({ children }) {
 
         const series = extractMetricSeries(facts, def.tags, preferredUnit);
         if (series.length === 0) continue;
-
+        console.log("Series", series);
         const latest = series[series.length - 1];
+        console.log(latest);
         const prev = series.length >= 2 ? series[series.length - 2] : null;
         const growth =
           prev?.value != null
